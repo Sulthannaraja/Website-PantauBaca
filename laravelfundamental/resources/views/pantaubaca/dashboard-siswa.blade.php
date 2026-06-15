@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Siswa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('pantaubaca/css/style.css') }}" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Dashboard Siswa</div>
+      <div class="nav-links">
+        <a href="katalog.html">Katalog</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container section">
+    <div class="stat-grid">
+      <div class="stat"><h4>Total Waktu Membaca</h4><p id="totalDuration">0 menit</p></div>
+      <div class="stat"><h4>Total Buku Dibaca</h4><p id="totalBooks">0</p></div>
+      <div class="stat"><h4>Target Literasi</h4><p id="targetInfo">0/10</p></div>
+    </div>
+
+    <h2 style="margin-top:24px;">Riwayat Membaca</h2>
+    <table>
+      <thead><tr><th>Buku</th><th>Durasi</th><th>Progress</th><th>Halaman</th><th>Update</th></tr></thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+
+    <section class="mainpanel quiz-panel" style="margin-top:24px;">
+      <div class="panel-heading">
+        <div>
+          <h2>Kuis Tersedia</h2>
+          <p>Kuis akan muncul setelah progress membaca mencapai 100%.</p>
+        </div>
+      </div>
+      <div id="availableQuizList" class="quiz-list"></div>
+      <div id="quizAttemptPanel" class="quiz-attempt hidden"></div>
+    </section>
+  </main>
+
+  <script src="{{ asset('pantaubaca/js/app.js') }}"></script>
+  <script src="{{ asset('pantaubaca/js/dashboard-siswa.js') }}"></script>
+</body>
+</html>
+
